@@ -1,9 +1,19 @@
 export default defineAppConfig({
-  siteName: "Nuxt 4 Template",
+  siteName: "Kilmer Construction LLC",
   ui: {
     colors: {
       primary: "blue",
       neutral: "zinc",
+    },
+    card: {
+      slots: {
+        root: "rounded-none overflow-hidden",
+      },
+    },
+    button: {
+      slots: {
+        base: "rounded-none font-medium inline-flex items-center cursor-pointer disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors",
+      },
     },
   },
 });
