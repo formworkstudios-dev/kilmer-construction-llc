@@ -33,7 +33,9 @@ const handleTouchMove = (event: TouchEvent) => {
   if (!isDragging.value || !containerRef.value || event.touches.length === 0) return
 
   const rect = containerRef.value.getBoundingClientRect()
-  const x = event.touches[0].clientX - rect.left
+  const touch = event.touches.item(0)
+  if (!touch) return
+  const x = touch.clientX - rect.left
   const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100))
   sliderPosition.value = percentage
 }
@@ -69,7 +71,7 @@ onUnmounted(() => {
               <span class="text-gray-600 text-xl font-bold">LOGO</span>
             </div>
 
-            <h1 class="text-4xl lg:text-6xl font-bold text-highlighted mb-6">
+            <h1 class="hero-title text-4xl lg:text-6xl font-bold text-highlighted mb-6">
               Best NEPA Contracting
             </h1>
             <p class="text-lg mb-8 leading-relaxed">
@@ -140,8 +142,8 @@ onUnmounted(() => {
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
             >
               <div class="flex gap-0.5">
-                <div class="w-0.5 h-4 bg-gray-400"></div>
-                <div class="w-0.5 h-4 bg-gray-400"></div>
+                <div class="w-0.5 h-4 bg-gray-400"/>
+                <div class="w-0.5 h-4 bg-gray-400"/>
               </div>
             </div>
           </div>

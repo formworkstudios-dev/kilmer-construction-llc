@@ -1,10 +1,173 @@
-<script setup lang="ts"></script>
+<script
+  setup
+  lang="ts"
+>
+import { reactive, ref } from 'vue'
+import type { FormError, FormErrorEvent, FormSubmitEvent } from '@nuxt/ui'
+
+const form = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  message: ''
+})
+
+const formRef = useTemplateRef('formRef')
+const submitting = ref(false)
+const success = ref(false)
+const serverError = ref<string | null>(null)
+
+const validate = (state: typeof form): FormError[] => {
+  const errors: FormError[] = []
+  if (!state.name || state.name.trim().length < 2) {
+    errors.push({ name: 'name', message: 'Please provide your name.' })
+  }
+  const emailRe = /[^\s@]+@[^\s@]+\.[^\s@]+/
+  if (!state.email || !emailRe.test(state.email)) {
+    errors.push({ name: 'email', message: 'Please provide a valid email.' })
+  }
+  if (!state.message || state.message.trim().length < 10) {
+    errors.push({ name: 'message', message: 'Please include a short message (10+ characters).' })
+  }
+  return errors
+}
+
+async function onSubmit(event: FormSubmitEvent<typeof form>) {
+  submitting.value = true
+  serverError.value = null
+  success.value = false
+  try {
+    const { error } = await useFetch('/api/contact', {
+      method: 'POST',
+      body: { ...event.data },
+    })
+    if (error.value) {
+      const err = error.value as { message?: string } | null
+      serverError.value = err?.message || 'Something went wrong. Please try again.'
+      return
+    }
+    success.value = true
+    Object.assign(form, { name: '', email: '', phone: '', message: '' })
+  } finally {
+    submitting.value = false
+  }
+}
+
+function onError(e: FormErrorEvent) {
+  if (e?.errors?.[0]?.id) {
+    const el = document.getElementById(e.errors[0].id)
+    el?.focus()
+    el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+}
+</script>
 
 <template>
-  <UContainer>
+  <UContainer class="pt-24 pb-16 max-w-3xl">
+    <h1>Contact Kilmer Construction</h1>
+    <p class="text-muted mt-4">Tell us a bit about your project and we’ll get back to you soon.</p>
 
-    Page: contact
+    <UCard
+      class="mt-8 rounded-none"
+      variant="outline"
+    >
+      <template #header>
+        <div class="flex items-center justify-between">
+          <h2 class="m-0">Request a Free Quote</h2>
+        </div>
+      </template>
 
+      <div class="space-y-4">
+        <UAlert
+          v-if="success"
+          color="success"
+          variant="soft"
+          title="Thanks!"
+          description="We’ve received your message and will be in touch shortly."
+        />
+        <UAlert
+          v-if="serverError"
+          color="error"
+          variant="soft"
+          title="There was a problem"
+          :description="serverError"
+        />
+      </div>
+
+      <UForm
+        ref="formRef"
+        :state="form"
+        :validate="validate"
+        class="space-y-6"
+        @submit="onSubmit"
+        @error="onError"
+      >
+        <UFormField
+          label="Name"
+          name="name"
+          class="w-full"
+        >
+          <UInput
+            v-model="form.name"
+            placeholder="Your full name"
+            class="w-full rounded-none"
+          />
+        </UFormField>
+
+        <UFormField
+          label="Email"
+          name="email"
+          class="w-full"
+        >
+          <UInput
+            v-model="form.email"
+            type="email"
+            placeholder="you@example.com"
+            class="w-full rounded-none"
+          />
+        </UFormField>
+
+        <UFormField
+          label="Phone"
+          name="phone"
+          class="w-full"
+        >
+          <UInput
+            v-model="form.phone"
+            type="tel"
+            placeholder="(555) 555-5555"
+            class="w-full rounded-none"
+          />
+        </UFormField>
+
+        <UFormField
+          label="Message"
+          name="message"
+          class="w-full"
+        >
+          <UTextarea
+            v-model="form.message"
+            :rows="6"
+            placeholder="What would you like to build?"
+            class="w-full rounded-none"
+          />
+        </UFormField>
+
+        <div class="flex items-center gap-4">
+          <UButton
+            :loading="submitting"
+            :disabled="submitting"
+            type="submit"
+            color="primary"
+            size="lg"
+            variant="solid"
+            class="rounded-none"
+          >
+            Send Message
+          </UButton>
+        </div>
+      </UForm>
+    </UCard>
   </UContainer>
 </template>
 

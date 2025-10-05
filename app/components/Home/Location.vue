@@ -3,9 +3,10 @@
   lang="ts"
 >
 import { onMounted, ref } from 'vue'
+import type { Map } from 'leaflet'
 
 const mapContainer = ref<HTMLElement>()
-let map: any = null
+let map: Map | null = null
 
 // Structured Data for SEO
 useHead({
@@ -172,7 +173,7 @@ onMounted(async () => {
                     size="20"
                   />
                   <p class="text-muted">
-                    132 Cherry St., Archbald, PA 18403
+                    841 Spruce Street, Olyphant, PA 18447
                   </p>
                 </div>
               </div>
@@ -195,7 +196,7 @@ onMounted(async () => {
               ref="mapContainer"
               class="w-full h-80 lg:h-96 bg-gray-100 border border-stone-500/40"
               style="min-height: 320px;"
-            ></div>
+            />
             <p class="!text-sm text-muted mt-2 text-center">
               Blue area shows our service coverage • Red dot is our office location
             </p>

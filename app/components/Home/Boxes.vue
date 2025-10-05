@@ -7,22 +7,22 @@
   <div class="border-b">
     <UContainer>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
-        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none">
-          <div class="flex flex-col items-start text-left p-6 gap-3">
+        <UCard class="border border-gray-200 dark:border-stone-500/50 shadow-none bg-primary/10">
+          <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-home"
               size="40"
               class="text-primary mb-1"
             />
-            <h3>Quality Craftsmanship</h3>
+            <h3>Top Craftsmanship</h3>
             <p class="text-muted">
               Top‑notch construction with attention to detail and materials that last.
             </p>
           </div>
         </UCard>
 
-        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none">
-          <div class="flex flex-col items-start text-left p-6 gap-3">
+        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none bg-primary/10">
+          <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-timer-sand"
               size="40"
@@ -35,8 +35,8 @@
           </div>
         </UCard>
 
-        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none">
-          <div class="flex flex-col items-start text-left p-6 gap-3">
+        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none bg-primary/10">
+          <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-account-group"
               size="40"

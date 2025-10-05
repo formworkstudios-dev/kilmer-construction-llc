@@ -44,7 +44,7 @@
               src="/kitchen-construction-pa.jpg"
               alt="Kitchen Construction Project"
               class="w-full h-auto"
-            />
+            >
           </div>
         </div>
       </section>

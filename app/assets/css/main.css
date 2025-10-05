@@ -1,43 +1,44 @@
 @import "tailwindcss" theme(static);
 @import "@nuxt/ui";
 
-h1 {
-  font-size: theme(fontSize.5xl);
-  line-height: theme(lineHeight.tight);
-  font-weight: theme(fontWeight.bold);
-  margin-bottom: 1.5rem;
-}
-
-h2 {
+/* Smaller, tighter global heading scale; hero can opt-out via .hero-title */
+h1:not(.hero-title) {
   font-size: theme(fontSize.3xl);
   line-height: theme(lineHeight.tight);
   font-weight: theme(fontWeight.bold);
   margin-bottom: 1rem;
 }
 
-h3 {
+h2 {
   font-size: theme(fontSize.2xl);
-  line-height: theme(lineHeight.snug);
-  font-weight: theme(fontWeight.semibold);
+  line-height: theme(lineHeight.tight);
+  font-weight: theme(fontWeight.bold);
   margin-bottom: 0.75rem;
 }
 
-h4 {
+h3 {
   font-size: theme(fontSize.xl);
   line-height: theme(lineHeight.snug);
   font-weight: theme(fontWeight.semibold);
   margin-bottom: 0.5rem;
 }
 
-h5 {
+h4 {
   font-size: theme(fontSize.lg);
+  line-height: theme(lineHeight.snug);
+  font-weight: theme(fontWeight.semibold);
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-size: theme(fontSize.base);
   line-height: theme(lineHeight.normal);
   font-weight: theme(fontWeight.medium);
   margin-bottom: 0.25rem;
 }
 
 h6 {
-  font-size: theme(fontSize.base);
+  font-size: theme(fontSize.sm);
   line-height: theme(lineHeight.normal);
   font-weight: theme(fontWeight.medium);
   margin-bottom: 0.25rem;

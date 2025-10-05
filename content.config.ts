@@ -1,4 +1,4 @@
-import { defineCollection, defineContentConfig, z } from "@nuxt/content";
+import { defineCollection, z } from "@nuxt/content";
 
 export const collections = {
   posts: defineCollection({

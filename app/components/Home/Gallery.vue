@@ -116,6 +116,7 @@ const galleryImages = [
           color="primary"
           variant="solid"
           size="lg"
+          to="contact-pa-contractor"
         >
           Get Your Free Quote
         </UButton>

@@ -10,6 +10,7 @@
     <HomeAbout />
     <HomeLocation />
     <HomeGallery />
+    <HomeClosingCTA />
   </div>
 </template>
 
