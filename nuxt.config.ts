@@ -10,8 +10,12 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
     "nuxt-resend",
+    "@nuxt/fonts",
   ],
 
+  // app: {
+  //   pageTransition: { name: "page", mode: "out-in" },
+  // },
   runtimeConfig: {
     resendApiKey: import.meta.env.RESEND_API_KEY as string | undefined,
   },

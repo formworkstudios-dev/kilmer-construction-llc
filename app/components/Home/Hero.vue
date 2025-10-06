@@ -66,16 +66,22 @@ onUnmounted(() => {
         <!-- Left Column -->
         <div class="flex flex-col justify-center py-12">
           <div class="max-w-xl mx-auto px-8 lg:px-12">
-            <!-- Logo Placeholder -->
-            <div class="w-48 h-48 mb-8 bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
-              <span class="text-gray-600 text-xl font-bold">LOGO</span>
-            </div>
+            <NuxtImg
+              :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"
+              alt="Kilmer Construction LLC Logo"
+              width="192"
+              height="192"
+              class="mb-8 mr-autonr w-48 h-48 object-contain"
+              loading="eager"
+              decoding="async"
+              placeholder
+            />
 
             <h1 class="hero-title text-4xl lg:text-6xl font-bold text-highlighted mb-6">
               Best NEPA Contracting
             </h1>
             <p class="text-lg mb-8 leading-relaxed">
-              Kilmer Construction LLC is a third-generation, family-owned contracting company based in Northeastern
+              Kilmer Construction LLC is a second-generation, family-owned contracting company based in Northeastern
               Pennsylavania. If you are looking for a local contractor "near me", we are your trusted choice for quality
               craftsmanship and reliable service.
             </p>
@@ -91,8 +97,9 @@ onUnmounted(() => {
                 color="primary"
                 variant="outline"
                 size="lg"
+                href="tel:+15705551234"
               >
-                Learn More
+                Call Now
               </UButton>
             </div>
           </div>
@@ -110,8 +117,8 @@ onUnmounted(() => {
           >
             <div class="absolute inset-0 bg-black/30 flex items-end justify-start p-6">
               <div class="text-white">
-                <p class="text-sm font-medium mb-1">BEFORE</p>
-                <p class="text-xs opacity-75">Original State</p>
+                <p class="text-sm !font-semibold mb-1">AFTER</p>
+                <p class="text-xs opacity-75">Completed Project</p>
               </div>
             </div>
           </div>
@@ -124,8 +131,8 @@ onUnmounted(() => {
           >
             <div class="absolute inset-0 bg-black/30 flex items-end justify-end p-6">
               <div class="text-white text-right">
-                <p class="text-sm font-medium mb-1">AFTER</p>
-                <p class="text-xs opacity-75">Completed Project</p>
+                <p class="text-sm !font-semibold mb-1 ">BEFORE</p>
+                <p class="text-xs opacity-75">Original State</p>
               </div>
             </div>
           </div>
@@ -142,15 +149,15 @@ onUnmounted(() => {
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
             >
               <div class="flex gap-0.5">
-                <div class="w-0.5 h-4 bg-gray-400"/>
-                <div class="w-0.5 h-4 bg-gray-400"/>
+                <div class="w-0.5 h-4 bg-gray-400" />
+                <div class="w-0.5 h-4 bg-gray-400" />
               </div>
             </div>
           </div>
 
           <!-- Instructions -->
           <div
-            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm z-20"
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm z-20 animate-pulse-primary shadow-sm"
           >
             <UIcon
               name="i-mdi-drag-horizontal"
@@ -165,4 +172,30 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@keyframes pulsePrimaryBg {
+
+  0%,
+  100% {
+    background-color: rgba(239, 68, 68, 0.55);
+  }
+
+  /* red-500 */
+  50% {
+    background-color: rgba(185, 28, 28, 0.65);
+  }
+
+  /* red-700 */
+}
+
+.animate-pulse-primary {
+  animation: pulsePrimaryBg 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-primary {
+    animation: none;
+    background-color: rgba(239, 68, 68, 0.55);
+  }
+}
+</style>

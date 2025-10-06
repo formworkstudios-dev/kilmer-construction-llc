@@ -6,8 +6,8 @@
 <template>
   <div class="border-t">
     <UContainer>
-      <section class="my-16">
-        <div class="bg-elevated p-12">
+      <section class="my-24">
+        <div class="bg-elevated px-6 py-16 md:px-12 md:py-24">
           <div class="flex flex-col  text-center items-center justify-between gap-6">
             <div>
               <h2 class="m-0">Ready to build something great?</h2>
@@ -21,11 +21,11 @@
                 variant="solid"
               >Get Your Free Quote</UButton>
               <UButton
-                to="/posts"
+                href="tel:+15705551234"
                 color="primary"
                 size="lg"
                 variant="outline"
-              >Learn More</UButton>
+              >Call Now</UButton>
             </div>
           </div>
         </div>

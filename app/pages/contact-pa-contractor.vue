@@ -63,112 +63,125 @@ function onError(e: FormErrorEvent) {
 </script>
 
 <template>
-  <UContainer class="pt-24 pb-16 max-w-3xl">
-    <h1>Contact Kilmer Construction</h1>
-    <p class="text-muted mt-4">Tell us a bit about your project and we’ll get back to you soon.</p>
-
-    <UCard
-      class="mt-8 rounded-none"
-      variant="outline"
+  <div>
+    <!-- Full-width header image with overlay text -->
+    <div
+      class="mt-22 relative h-80 md:h-96 w-full bg-cover bg-center border-b"
+      style="background-image: url('/window-installation.webp');"
     >
-      <template #header>
-        <div class="flex items-center justify-between">
-          <h2 class="m-0">Request a Free Quote</h2>
+      <div class="absolute inset-0 bg-black/60" />
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center px-4">
+          <h1 class="m-0 text-stone-100">Contact Kilmer Construction</h1>
+          <p class="text-stone-300 mt-2">Tell us about your project and we’ll get back to you soon</p>
         </div>
-      </template>
-
-      <div class="space-y-4">
-        <UAlert
-          v-if="success"
-          color="success"
-          variant="soft"
-          title="Thanks!"
-          description="We’ve received your message and will be in touch shortly."
-        />
-        <UAlert
-          v-if="serverError"
-          color="error"
-          variant="soft"
-          title="There was a problem"
-          :description="serverError"
-        />
       </div>
+    </div>
 
-      <UForm
-        ref="formRef"
-        :state="form"
-        :validate="validate"
-        class="space-y-6"
-        @submit="onSubmit"
-        @error="onError"
+    <UContainer class="pt-8 pb-16 max-w-3xl min-h-screen">
+      <UCard
+        class="mt-8 rounded-none bg-elevated"
+        variant="outline"
       >
-        <UFormField
-          label="Name"
-          name="name"
-          class="w-full"
-        >
-          <UInput
-            v-model="form.name"
-            placeholder="Your full name"
-            class="w-full rounded-none"
-          />
-        </UFormField>
+        <template #header>
+          <div class="flex items-center justify-between">
+            <h2 class="m-0">Request a Free Quote</h2>
+          </div>
+        </template>
 
-        <UFormField
-          label="Email"
-          name="email"
-          class="w-full"
-        >
-          <UInput
-            v-model="form.email"
-            type="email"
-            placeholder="you@example.com"
-            class="w-full rounded-none"
+        <div class="space-y-4">
+          <UAlert
+            v-if="success"
+            color="success"
+            variant="soft"
+            title="Thanks!"
+            description="We’ve received your message and will be in touch shortly."
           />
-        </UFormField>
-
-        <UFormField
-          label="Phone"
-          name="phone"
-          class="w-full"
-        >
-          <UInput
-            v-model="form.phone"
-            type="tel"
-            placeholder="(555) 555-5555"
-            class="w-full rounded-none"
+          <UAlert
+            v-if="serverError"
+            color="error"
+            variant="soft"
+            title="There was a problem"
+            :description="serverError"
           />
-        </UFormField>
-
-        <UFormField
-          label="Message"
-          name="message"
-          class="w-full"
-        >
-          <UTextarea
-            v-model="form.message"
-            :rows="6"
-            placeholder="What would you like to build?"
-            class="w-full rounded-none"
-          />
-        </UFormField>
-
-        <div class="flex items-center gap-4">
-          <UButton
-            :loading="submitting"
-            :disabled="submitting"
-            type="submit"
-            color="primary"
-            size="lg"
-            variant="solid"
-            class="rounded-none"
-          >
-            Send Message
-          </UButton>
         </div>
-      </UForm>
-    </UCard>
-  </UContainer>
+
+        <UForm
+          ref="formRef"
+          :state="form"
+          :validate="validate"
+          class="space-y-6"
+          @submit="onSubmit"
+          @error="onError"
+        >
+          <UFormField
+            label="Name"
+            name="name"
+            class="w-full"
+          >
+            <UInput
+              v-model="form.name"
+              placeholder="Your full name"
+              class="w-full rounded-none"
+            />
+          </UFormField>
+
+          <UFormField
+            label="Email"
+            name="email"
+            class="w-full"
+          >
+            <UInput
+              v-model="form.email"
+              type="email"
+              placeholder="you@example.com"
+              class="w-full rounded-none"
+            />
+          </UFormField>
+
+          <UFormField
+            label="Phone"
+            name="phone"
+            class="w-full"
+          >
+            <UInput
+              v-model="form.phone"
+              type="tel"
+              placeholder="(555) 555-5555"
+              class="w-full rounded-none"
+            />
+          </UFormField>
+
+          <UFormField
+            label="Message"
+            name="message"
+            class="w-full"
+          >
+            <UTextarea
+              v-model="form.message"
+              :rows="6"
+              placeholder="What would you like to build?"
+              class="w-full rounded-none"
+            />
+          </UFormField>
+
+          <div class="flex items-center gap-4">
+            <UButton
+              :loading="submitting"
+              :disabled="submitting"
+              type="submit"
+              color="primary"
+              size="lg"
+              variant="solid"
+              class="rounded-none"
+            >
+              Send Message
+            </UButton>
+          </div>
+        </UForm>
+      </UCard>
+    </UContainer>
+  </div>
 </template>
 
 <style scoped></style>

@@ -37,8 +37,8 @@ export default defineEventHandler(async (event) => {
 
   let ResendCtor: unknown;
   try {
-    const mod = (await import("resend")) as { Resend: new (apiKey: string) => { emails: { send: (args: any) => Promise<any> } } };
-    ResendCtor = mod?.Resend;
+    const mod = await import("resend");
+    ResendCtor = (mod as Record<string, unknown>)?.Resend;
   } catch {
     setResponseStatus(event, 500);
     return {
@@ -47,8 +47,21 @@ export default defineEventHandler(async (event) => {
     };
   }
 
-  const ResendClass = ResendCtor as new (apiKey: string) => { emails: { send: (args: { from: string; to: string[]; bcc?: string[]; subject: string; html: string; text: string }) => Promise<unknown> } }
-  const resend = new ResendClass(config.resendApiKey as string);
+  interface ResendLike {
+    emails: {
+      send: (args: {
+        from: string;
+        to: string[];
+        bcc?: string[];
+        subject: string;
+        html: string;
+        text: string;
+      }) => Promise<unknown>;
+    };
+  }
+
+  const ResendClass = ResendCtor as new (apiKey?: string) => unknown;
+  const resend = new ResendClass(config.resendApiKey as string) as ResendLike;
 
   // Compose email content (Kilmer Construction)
   const subject = `New Construction Project Inquiry from ${name}`;
@@ -65,7 +78,7 @@ export default defineEventHandler(async (event) => {
   try {
     const result = await resend.emails.send({
       from: "Kilmer Construction Website <no-reply@formworkstudios.xyz>", // keep email, change display name
-      to: ["info@cierrasmaidtoclean.com"], // per request: keep addresses as-is
+      to: ["hello@formworkstudios.com"], // per request: keep addresses as-is
       bcc: ["mikesynan@gmail.com"],
       subject,
       html,
@@ -75,7 +88,7 @@ export default defineEventHandler(async (event) => {
     return { status: "sent", result };
   } catch (err: unknown) {
     setResponseStatus(event, 500);
-    const message = (err && typeof err === 'object' && 'message' in err) ? String((err as any).message) : 'Failed to send email'
+    const message = err instanceof Error ? err.message : "Failed to send email";
     return { status: "error", message };
   }
 });

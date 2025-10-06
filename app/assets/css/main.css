@@ -9,6 +9,12 @@ h1:not(.hero-title) {
   margin-bottom: 1rem;
 }
 
+h1,
+h2,
+.logo {
+  font-family: "Alfa Slab One", sans-serif !important;
+}
+
 h2 {
   font-size: theme(fontSize.2xl);
   line-height: theme(lineHeight.tight);
@@ -48,4 +54,11 @@ p {
   font-size: theme(fontSize.base);
   line-height: theme(lineHeight.relaxed);
   font-weight: theme(fontWeight.normal);
+}
+
+body,
+p {
+  font-family: "Inter", sans-serif;
+  /* font-weight: 400;
+  line-height: 1.6; */
 }

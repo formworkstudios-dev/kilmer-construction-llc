@@ -6,64 +6,50 @@
 const galleryImages = [
   {
     id: 1,
-    src: 'https://picsum.photos/600/400?random=1&blur=0',
-    alt: 'Kitchen renovation project'
+    src: '/kitchen-construction.jpg',
+    alt: 'Completed kitchen construction project'
   },
   {
     id: 2,
-    src: 'https://picsum.photos/600/400?random=2&blur=0',
-    alt: 'Bathroom remodeling work'
+    src: '/kitchen-construction-pa.jpg',
+    alt: 'Before photo kitchen construction project'
   },
   {
     id: 3,
-    src: 'https://picsum.photos/600/400?random=3&blur=0',
-    alt: 'Custom home construction'
+    src: '/kitchen-remodeling-scranton.webp',
+    alt: 'Kitchen and cabinet remodeling'
   },
   {
     id: 4,
-    src: 'https://picsum.photos/600/400?random=4&blur=0',
-    alt: 'Roofing installation project'
+    src: '/old-home-contracting-remodeling.webp',
+    alt: 'Kitchen countertop installation'
   },
   {
     id: 5,
-    src: 'https://picsum.photos/600/400?random=5&blur=0',
-    alt: 'Foundation and concrete work'
+    src: '/best-remodeling-pa.webp',
+    alt: 'Kitchen sink installation'
   },
   {
     id: 6,
-    src: 'https://picsum.photos/600/400?random=6&blur=0',
-    alt: 'Interior finishing details'
+    src: 'sliding-glass-door-installation.webp',
+    alt: 'Sliding glass door installation'
   },
   {
     id: 7,
-    src: 'https://picsum.photos/600/400?random=7&blur=0',
-    alt: 'Exterior siding project'
+    src: '/window-installation.webp',
+    alt: 'Window installation project'
   },
   {
     id: 8,
-    src: 'https://picsum.photos/600/400?random=8&blur=0',
-    alt: 'Deck and outdoor construction'
+    src: '/siding-job-pa-contractor.webp',
+    alt: 'Siding job on old home'
   },
   {
     id: 9,
-    src: 'https://picsum.photos/600/400?random=9&blur=0',
-    alt: 'Commercial building project'
+    src: '/siding-job-in-nepa.webp',
+    alt: 'Siding job in NEPA'
   },
-  {
-    id: 10,
-    src: 'https://picsum.photos/600/400?random=10&blur=0',
-    alt: 'Flooring installation work'
-  },
-  {
-    id: 11,
-    src: 'https://picsum.photos/600/400?random=11&blur=0',
-    alt: 'Electrical and plumbing rough-in'
-  },
-  {
-    id: 12,
-    src: 'https://picsum.photos/600/400?random=12&blur=0',
-    alt: 'Finished construction project'
-  }
+
 ]
 </script>
 
@@ -73,9 +59,9 @@ const galleryImages = [
       <!-- Section Header -->
       <div class="mb-12">
         <h2>Our Work</h2>
-        <p class="text-lg text-muted mt-4 max-w-3xl">
-          Take a look at some of our recent construction projects. From kitchen renovations to custom homes,
-          we take pride in delivering quality craftsmanship that exceeds expectations.
+        <p class="text-lg text-muted mt-4 max-w-2xl">
+          We take pride in our work. From kitchen renovations to siding and the construction of new homes,
+          we deliver quality craftsmanship that that stands out.
         </p>
       </div>
 
@@ -94,12 +80,11 @@ const galleryImages = [
             format="webp"
             quality="80"
             sizes="sm:100vw md:50vw lg:33vw"
+            placeholder
           />
 
           <!-- Overlay on hover -->
-          <div
-            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end"
-          >
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
             <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p class="text-sm font-medium">{{ image.alt }}</p>
             </div>
@@ -107,20 +92,6 @@ const galleryImages = [
         </div>
       </div>
 
-      <!-- Call to Action -->
-      <div class="mt-12 text-center">
-        <p class="text-muted mb-6">
-          Ready to start your next construction project?
-        </p>
-        <UButton
-          color="primary"
-          variant="solid"
-          size="lg"
-          to="contact-pa-contractor"
-        >
-          Get Your Free Quote
-        </UButton>
-      </div>
     </section>
   </UContainer>
 </template>

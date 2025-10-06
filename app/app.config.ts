@@ -2,8 +2,9 @@ export default defineAppConfig({
   siteName: "Kilmer Construction LLC",
   ui: {
     colors: {
-      primary: "blue",
-      neutral: "zinc",
+      primary: "red",
+      secondary: "yellow",
+      neutral: "stone",
     },
     card: {
       slots: {

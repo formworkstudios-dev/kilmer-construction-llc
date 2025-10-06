@@ -48,13 +48,24 @@ onUnmounted(() => {
 <template>
   <div
 :class="[
-    'fixed top-0 inset-x-0 z-50 h-14 border-b bg-elevated transition-transform duration-300 will-change-transform',
+    'fixed top-0 inset-x-0 z-[1200] transition-transform duration-300 will-change-transform',
     isHidden ? '-translate-y-full' : 'translate-y-0'
   ]">
-    <div class="flex justify-between items-center h-full">
+    <!-- Top Call Now strip -->
+    <div class="bg-yellow-400 text-black text-sm border-b">
+      <a
+        href="tel:+15705551234"
+        class="block text-center h-8 leading-8 px-4 hover:underline font-semibold"
+      >
+        Call Now: (570) 555-1234
+      </a>
+    </div>
+
+    <!-- Main navigation bar -->
+    <div class="flex justify-between items-center h-14 border-b bg-elevated">
       <NuxtLink
         to="/"
-        class="px-4 font-bold h-full flex items-center"
+        class="px-4 font-bold h-full flex items-center uppercase logo"
       >
         {{ siteLogo ? siteLogo : siteName }}
       </NuxtLink>
@@ -74,7 +85,7 @@ onUnmounted(() => {
         >Contracting Blog</NuxtLink>
         <NuxtLink
           to="/contact-pa-contractor"
-          class="bg-primary text-inverted px-4 h-full flex items-center hover:bg-primary/90"
+          class="bg-primary text-inverted px-4 h-full flex items-center hover:bg-primary/90 border-l"
         >
           Contact Us
         </NuxtLink>
