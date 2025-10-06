@@ -23,6 +23,7 @@
               color="primary"
               variant="solid"
               size="lg"
+              class="w-full md:w-auto justify-center text-center"
             >
               Learn More About Us
             </UButton>

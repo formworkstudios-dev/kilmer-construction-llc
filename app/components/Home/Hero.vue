@@ -62,42 +62,47 @@ onUnmounted(() => {
 <template>
   <div class="min-h-screen flex items-stretch border-b">
     <div class="w-full h-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 h-screen w-full">
+      <div
+        class="flex flex-col md:grid md:grid-cols-2 md:h-screen w-full pt-24 md:pt-0 min-h-[calc(100vh-6rem)] md:min-h-0 justify-between"
+      >
         <!-- Left Column -->
-        <div class="flex flex-col justify-center py-12">
-          <div class="max-w-xl mx-auto px-8 lg:px-12">
+        <div class="flex flex-col justify-center md:justify-left py-10 md:py-12">
+          <div class="max-w-lg md:max-w-xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
             <NuxtImg
               :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"
               alt="Kilmer Construction LLC Logo"
               width="192"
               height="192"
-              class="mb-8 mr-autonr w-48 h-48 object-contain"
+              class="mb-6 sm:mb-8 mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 object-contain ml-auto md:!ml-0 mr-auto"
               loading="eager"
               decoding="async"
               placeholder
             />
 
-            <h1 class="hero-title text-4xl lg:text-6xl font-bold text-highlighted mb-6">
+            <h1 class="hero-title text-3xl sm:text-4xl lg:text-6xl font-bold text-highlighted mb-4 md:mb-6">
               Best NEPA Contracting
             </h1>
-            <p class="text-lg mb-8 leading-relaxed">
+            <p class="text-base sm:text-lg mb-6 md:mb-8 leading-relaxed">
               Kilmer Construction LLC is a second-generation, family-owned contracting company based in Northeastern
               Pennsylavania. If you are looking for a local contractor "near me", we are your trusted choice for quality
               craftsmanship and reliable service.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start items-stretch">
               <UButton
                 color="primary"
                 variant="solid"
                 size="lg"
+                to="/contact-pa-contractor"
+                class="w-full md:w-auto"
               >
-                Get Started
+                Get a Quote
               </UButton>
               <UButton
                 color="primary"
                 variant="outline"
                 size="lg"
                 href="tel:+15705551234"
+                class="w-full md:w-auto"
               >
                 Call Now
               </UButton>
@@ -108,7 +113,7 @@ onUnmounted(() => {
         <!-- Right Column - Before/After Slider -->
         <div
           ref="containerRef"
-          class="relative border-l-0 md:border-l h-full w-full overflow-hidden cursor-col-resize"
+          class="relative border-l-0 md:border-l h-96 sm:h-[28rem] md:h-full w-full overflow-hidden cursor-col-resize"
         >
           <!-- Before Image (Background) -->
           <div

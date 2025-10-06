@@ -173,7 +173,7 @@ function onError(e: FormErrorEvent) {
               color="primary"
               size="lg"
               variant="solid"
-              class="rounded-none"
+              class="rounded-none w-full md:w-auto justify-center text-center"
             >
               Send Message
             </UButton>

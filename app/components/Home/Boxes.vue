@@ -7,7 +7,9 @@
   <div class="border-b">
     <UContainer>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
-        <UCard class="border border-gray-200 dark:border-stone-500/50 shadow-none bg-elevated">
+        <UCard
+          class="border border-gray-200 dark:border-stone-500/50 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+        >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-home"
@@ -21,7 +23,9 @@
           </div>
         </UCard>
 
-        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated">
+        <UCard
+          class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+        >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-timer-sand"
@@ -35,7 +39,9 @@
           </div>
         </UCard>
 
-        <UCard class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated">
+        <UCard
+          class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+        >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
               name="i-mdi-account-group"

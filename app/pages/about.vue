@@ -14,14 +14,14 @@
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center px-4">
           <h1 class="m-0 text-stone-100">About Kilmer Construction LLC</h1>
-          <p class="text-stone-300 mt-2">A third-generation contractor proudly serving NEPA</p>
+          <p class="text-stone-300 mt-2">A quarter of a century building homes in Northeastern Pennsylvania</p>
         </div>
       </div>
     </div>
 
     <UContainer class="pt-8 pb-16 max-w-3xl min-h-screen">
       <p class=" mt-4">
-        Kilmer Construction LLC is a third-generation, family-owned contracting company based in Northeastern
+        Kilmer Construction LLC is a second-generation, family-owned contracting company based in Northeastern
         Pennsylvania.
         If you’re looking for a local contractor “near me”, we’re your trusted choice for quality craftsmanship and
         reliable service.
@@ -43,6 +43,7 @@
           color="primary"
           size="lg"
           variant="solid"
+          class="w-full md:w-auto justify-center text-center"
         >
           Get Your Free Quote
         </UButton>

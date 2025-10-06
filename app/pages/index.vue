@@ -8,8 +8,8 @@
     <HomeHero />
     <HomeBoxes />
     <HomeAbout />
-    <HomeLocation />
     <HomeGallery />
+    <HomeLocation />
     <HomeClosingCTA />
   </div>
 </template>

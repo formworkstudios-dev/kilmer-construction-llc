@@ -127,7 +127,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="border-b bg-elevated">
+  <div class="border-y bg-elevated">
     <UContainer>
       <section class="py-16">
 
