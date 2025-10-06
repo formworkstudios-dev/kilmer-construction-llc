@@ -17,7 +17,7 @@
           class="opacity-50 !text-xs"
         >•</span>
         <NuxtLink
-          to="/terms"
+          to="/tos"
           class="hover:underline !text-xs"
         >Terms</NuxtLink>
       </nav>

@@ -66,14 +66,14 @@ onUnmounted(() => {
         class="flex flex-col md:grid md:grid-cols-2 md:h-screen w-full pt-24 md:pt-0 min-h-[calc(100vh-6rem)] md:min-h-0 justify-between"
       >
         <!-- Left Column -->
-        <div class="flex flex-col justify-center md:justify-left py-10 md:py-12">
-          <div class="max-w-lg md:max-w-xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
+        <div class="flex flex-col justify-center py-10 md:py-12 md:items-center">
+          <div class="max-w-lg md:max-w-xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <NuxtImg
               :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"
               alt="Kilmer Construction LLC Logo"
-              width="192"
-              height="192"
-              class="mb-6 sm:mb-8 mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 object-contain ml-auto md:!ml-0 mr-auto"
+              width="380"
+              height="380"
+              class="mb-6 sm:mb-8 mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-96 md:h-96 object-contain"
               loading="eager"
               decoding="async"
               placeholder
@@ -82,25 +82,24 @@ onUnmounted(() => {
             <h1 class="hero-title text-3xl sm:text-4xl lg:text-6xl font-bold text-highlighted mb-4 md:mb-6">
               Best NEPA Contracting
             </h1>
-            <p class="text-base sm:text-lg mb-6 md:mb-8 leading-relaxed">
+            <p class="text-base sm:!text-lg med:!text-xl mb-6 md:mb-8 leading-relaxed">
               Kilmer Construction LLC is a second-generation, family-owned contracting company based in Northeastern
-              Pennsylavania. If you are looking for a local contractor "near me", we are your trusted choice for quality
-              craftsmanship and reliable service.
+              PA.
             </p>
-            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start items-stretch">
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-center items-stretch">
               <UButton
                 color="primary"
                 variant="solid"
-                size="lg"
+                size="xl"
                 to="/contact-pa-contractor"
                 class="w-full md:w-auto"
               >
-                Get a Quote
+                Get a Free Quote
               </UButton>
               <UButton
                 color="primary"
                 variant="outline"
-                size="lg"
+                size="xl"
                 href="tel:+15705551234"
                 class="w-full md:w-auto"
               >
