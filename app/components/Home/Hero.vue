@@ -61,12 +61,12 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen flex items-stretch border-b">
-    <div class="w-full h-full">
+    <div class="w-full h-[100dvh] md:h-auto">
       <div
-        class="flex flex-col md:grid md:grid-cols-2 md:h-screen w-full pt-24 md:pt-0 min-h-[calc(100vh-6rem)] md:min-h-0 justify-between"
+        class="flex flex-col md:grid md:grid-cols-2 w-full h-full md:h-screen justify-between md:justify-between box-border min-h-0"
       >
         <!-- Left Column -->
-        <div class="flex flex-col justify-center py-10 md:py-12 md:items-center">
+        <div class="flex flex-col justify-center py-10 md:py-12 md:items-center flex-1">
           <div class="max-w-lg md:max-w-xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <NuxtImg
               :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"
@@ -79,13 +79,10 @@ onUnmounted(() => {
               placeholder
             />
 
-            <h1 class="hero-title text-3xl sm:text-4xl lg:text-6xl font-bold text-highlighted mb-4 md:mb-6">
-              Best NEPA Contracting
+            <h1 class="hero-title text-xl sm:text-2xl lg:text-3xl font-bold text-highlighted mb-4 md:mb-6">
+              Northeastern PA's trusted family-owned contractor, building on a legacy of quality since 2001.
             </h1>
-            <p class="text-base sm:!text-lg med:!text-xl mb-6 md:mb-8 leading-relaxed">
-              Kilmer Construction LLC is a second-generation, family-owned contracting company based in Northeastern
-              PA.
-            </p>
+
             <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-center items-stretch">
               <UButton
                 color="primary"
@@ -110,65 +107,67 @@ onUnmounted(() => {
         </div>
 
         <!-- Right Column - Before/After Slider -->
-        <div
-          ref="containerRef"
-          class="relative border-l-0 md:border-l h-96 sm:h-[28rem] md:h-full w-full overflow-hidden cursor-col-resize"
-        >
-          <!-- Before Image (Background) -->
+        <div class="mt-auto md:mt-0">
           <div
-            class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url(/kitchen-construction.jpg)]"
-            style="background-position: center center;"
+            ref="containerRef"
+            class="relative border-l-0 md:border-l h-96 sm:h-[28rem] md:h-full w-full overflow-hidden cursor-col-resize mt-auto md:mt-0"
           >
-            <div class="absolute inset-0 bg-black/30 flex items-end justify-start p-6">
-              <div class="text-white">
-                <p class="text-sm !font-semibold mb-1">AFTER</p>
-                <p class="text-xs opacity-75">Completed Project</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- After Image (Overlay) -->
-          <div
-            class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url(/kitchen-construction-pa.jpg)]"
-            style="background-position: center center;"
-            :style="{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }"
-          >
-            <div class="absolute inset-0 bg-black/30 flex items-end justify-end p-6">
-              <div class="text-white text-right">
-                <p class="text-sm !font-semibold mb-1 ">BEFORE</p>
-                <p class="text-xs opacity-75">Original State</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slider Handle -->
-          <div
-            class="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10 cursor-col-resize"
-            :style="{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }"
-            @mousedown="handleMouseDown"
-            @touchstart="handleTouchStart"
-          >
-            <!-- Slider Circle -->
+            <!-- Before Image (Background) -->
             <div
-              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
+              class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url(/kitchen-construction.jpg)]"
+              style="background-position: center center;"
             >
-              <div class="flex gap-0.5">
-                <div class="w-0.5 h-4 bg-gray-400" />
-                <div class="w-0.5 h-4 bg-gray-400" />
+              <div class="absolute inset-0 bg-black/30 flex items-end justify-start p-6">
+                <div class="text-white">
+                  <p class="text-sm !font-semibold mb-1">AFTER</p>
+                  <p class="text-xs opacity-75">Completed Project</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Instructions -->
-          <div
-            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm z-20 animate-pulse-primary shadow-sm"
-          >
-            <UIcon
-              name="i-mdi-drag-horizontal"
-              class="inline mr-2"
-              size="16"
-            />
-            Slide to compare
+            <!-- After Image (Overlay) -->
+            <div
+              class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url(/kitchen-construction-pa.jpg)]"
+              style="background-position: center center;"
+              :style="{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }"
+            >
+              <div class="absolute inset-0 bg-black/30 flex items-end justify-end p-6">
+                <div class="text-white text-right">
+                  <p class="text-sm !font-semibold mb-1 ">BEFORE</p>
+                  <p class="text-xs opacity-75">Original State</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slider Handle -->
+            <div
+              class="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10 cursor-col-resize"
+              :style="{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }"
+              @mousedown="handleMouseDown"
+              @touchstart="handleTouchStart"
+            >
+              <!-- Slider Circle -->
+              <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
+              >
+                <div class="flex gap-0.5">
+                  <div class="w-0.5 h-4 bg-gray-400" />
+                  <div class="w-0.5 h-4 bg-gray-400" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Instructions -->
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm z-20 animate-pulse-primary shadow-sm"
+            >
+              <UIcon
+                name="i-mdi-drag-horizontal"
+                class="inline mr-2"
+                size="16"
+              />
+              Slide to compare
+            </div>
           </div>
         </div>
       </div>
