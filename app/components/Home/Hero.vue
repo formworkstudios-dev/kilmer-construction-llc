@@ -66,7 +66,7 @@ onUnmounted(() => {
         class="flex flex-col md:grid md:grid-cols-2 w-full h-full md:h-screen justify-between md:justify-between box-border min-h-0"
       >
         <!-- Left Column -->
-        <div class="flex flex-col justify-center py-10 md:py-12 md:items-center flex-1">
+        <div class="flex flex-col justify-center py-10 md:py-12 md:items-center flex-1 pt-24">
           <div class="max-w-lg md:max-w-xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <NuxtImg
               :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"

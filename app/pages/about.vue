@@ -8,7 +8,7 @@
     <!-- Full-width header image with overlay text -->
     <div
       class="mt-22 relative h-80 md:h-96 w-full bg-cover bg-center border-b"
-      style="background-image: url('/siding-job-in-nepa.webp');"
+      style="background-image: url('/deck-construction-pa.webp');"
     >
       <div class="absolute inset-0 bg-black/60" />
       <div class="absolute inset-0 flex items-center justify-center">

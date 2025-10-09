@@ -67,7 +67,7 @@ function onError(e: FormErrorEvent) {
     <!-- Full-width header image with overlay text -->
     <div
       class="mt-22 relative h-80 md:h-96 w-full bg-cover bg-center border-b"
-      style="background-image: url('/window-installation.webp');"
+      style="background-image: url('/kitchen-construction.jpg');"
     >
       <div class="absolute inset-0 bg-black/60" />
       <div class="absolute inset-0 flex items-center justify-center">
