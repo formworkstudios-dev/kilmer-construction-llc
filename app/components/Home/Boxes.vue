@@ -8,7 +8,7 @@
     <UContainer>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
         <UCard
-          class="border border-gray-200 dark:border-stone-500/50 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+          class="border border-stone-200 dark:border-stone-500/50 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
         >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
@@ -16,7 +16,7 @@
               size="40"
               class="text-primary mb-1"
             />
-            <h3>Top Craftsmanship</h3>
+            <h3 class="hero-heading">Top Craftsmanship</h3>
             <p class="text-muted">
               Top‑notch construction with attention to detail and materials that last.
             </p>
@@ -24,7 +24,7 @@
         </UCard>
 
         <UCard
-          class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+          class="border border-stone-200 dark:border-stone-500/50 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
         >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
@@ -32,7 +32,7 @@
               size="40"
               class="text-primary mb-1"
             />
-            <h3>Family‑Owned</h3>
+            <h3 class="hero-heading">Family‑Owned</h3>
             <p class="text-muted">
               Reliable scheduling, clear communication, and respect for your home.
             </p>
@@ -40,7 +40,7 @@
         </UCard>
 
         <UCard
-          class="border border-gray-200 dark:border-gray-800 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
+          class="border border-stone-200 dark:border-stone-500/50 shadow-none bg-elevated hover:bg-accented/80 transition-colors"
         >
           <div class="flex flex-col items-start text-left p-4 gap-3">
             <UIcon
@@ -48,7 +48,7 @@
               size="40"
               class="text-primary mb-1"
             />
-            <h3>Customer Satisfaction</h3>
+            <h3 class="hero-heading">Customer Satisfaction</h3>
             <p class="text-muted">
               We listen first and deliver results that meet your goals and budget.
             </p>

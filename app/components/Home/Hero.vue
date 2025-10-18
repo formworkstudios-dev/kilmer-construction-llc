@@ -71,19 +71,21 @@ onUnmounted(() => {
             <NuxtImg
               :src="$colorMode.value === 'dark' ? '/kilmer-construction-dark.PNG' : '/kilmer-construction.PNG'"
               alt="Kilmer Construction LLC Logo"
-              width="380"
+              width="400"
               height="380"
-              class="mb-6 sm:mb-8 mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-96 md:h-96 object-contain"
+              class="mb-6 sm:mb-8 mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-96 md:h-96 object-contain overflow-visible"
               loading="eager"
               decoding="async"
               placeholder
             />
 
-            <h1 class="hero-title text-xl sm:text-2xl lg:text-3xl font-bold text-highlighted mb-4 md:mb-6">
+            <h1
+              class="hero-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-highlighted mb-4 md:mb-6 tracking-tight"
+            >
               Northeastern PA's trusted family-owned contractor, building on a legacy of quality since 2001.
             </h1>
 
-            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-center items-stretch">
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-center items-stretch mt-8">
               <UButton
                 color="primary"
                 variant="solid"

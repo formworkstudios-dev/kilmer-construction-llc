@@ -6,7 +6,7 @@
 <template>
   <div class="border-t p-4 text-sm text-muted bg-elevated">
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-      
+
       <!-- Left section: Copyright -->
       <div class="flex items-center justify-center md:justify-start">
         <span class="!text-xs">© Kilmer Construction LLC 2025</span>
@@ -29,14 +29,14 @@
       </nav>
 
       <!-- Right section: Built by + Color mode -->
-      <div class="flex items-center gap-4 justify-center md:justify-end">
-        <span class="!text-xs text-muted">
-          Website Built by 
-          <a 
-            href="https://formworkstudios.com" 
-            target="_blank" 
+      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 justify-center md:justify-end">
+        <span class="!text-xs text-muted text-center">
+          Website Built by
+          <a
+            href="https://formworkstudios.com"
+            target="_blank"
             rel="noopener noreferrer"
-            class="text-primary hover:underline"
+            class="text-muted hover:underline"
           >
             Formwork Studios
           </a>

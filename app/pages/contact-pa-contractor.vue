@@ -72,26 +72,55 @@ function onError(e: FormErrorEvent) {
       <div class="absolute inset-0 bg-black/60" />
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center px-4">
-          <h1 class="m-0 text-stone-100">Contact Kilmer Construction</h1>
+          <h1 class="hero-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-100 tracking-tight">Contact
+            Kilmer Construction</h1>
           <p class="text-stone-300 mt-2">Tell us about your project and we’ll get back to you soon</p>
         </div>
       </div>
     </div>
 
     <UContainer class="pt-8 pb-16 max-w-3xl min-h-screen">
+      <div class="mb-8 text-center">
+        <div class="text-lg font-semibold text-stone-700">Call or Email Us Directly:</div>
+        <div class="mt-2">
+          <span class="inline-block mr-4">
+            <UIcon
+              name="i-mdi-phone"
+              class="mr-1 align-middle"
+              size="18"
+            />
+            <a
+              href="tel:5035551234"
+              class="text-primary font-medium hover:underline"
+            >(503) 555-1234</a>
+          </span>
+          <span class="inline-block">
+            <UIcon
+              name="i-mdi-email"
+              class="mr-1 align-middle"
+              size="18"
+            />
+            <a
+              href="mailto:info@kilmerconstruction.com"
+              class="text-primary font-medium hover:underline"
+            >info@kilmerconstruction.com</a>
+          </span>
+        </div>
+      </div>
       <UCard
         class="mt-8 rounded-none bg-elevated"
         variant="outline"
       >
         <template #header>
-          <div class="flex items-center justify-between">
-            <h2 class="m-0">Request a Free Quote</h2>
+          <div class="flex items-center justify-between ">
+            <h2 class="m-0 pt-2">Request a Free Quote</h2>
           </div>
         </template>
 
         <div class="space-y-4">
           <UAlert
             v-if="success"
+            class="rounded-none pb-2 mb-4"
             color="success"
             variant="soft"
             title="Thanks!"
@@ -99,6 +128,7 @@ function onError(e: FormErrorEvent) {
           />
           <UAlert
             v-if="serverError"
+            class="rounded-none pb-2 mb-4"
             color="error"
             variant="soft"
             title="There was a problem"
@@ -175,6 +205,16 @@ function onError(e: FormErrorEvent) {
               variant="solid"
               class="rounded-none w-full md:w-auto justify-center text-center"
             >
+              <template
+                #leading
+                v-if="submitting"
+              >
+                <UIcon
+                  name="i-mdi-loading"
+                  class="animate-spin mr-2"
+                  size="20"
+                />
+              </template>
               Send Message
             </UButton>
           </div>

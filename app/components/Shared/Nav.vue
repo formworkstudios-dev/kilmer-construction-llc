@@ -61,13 +61,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-:class="[
+  <div :class="[
     'fixed top-0 inset-x-0 z-[1200] transition-transform duration-300 will-change-transform',
     isHidden ? '-translate-y-full' : 'translate-y-0'
   ]">
     <!-- Top Call Now strip -->
-    <div class="bg-yellow-400 text-black text-sm border-b relative z-[1150]">
+    <div class="bg-yellow-400 dark:bg-yellow-600 dark:text-white text-black text-sm border-b relative z-[1150]">
       <a
         href="tel:+15705551234"
         class="block text-center h-8 leading-8 px-4 hover:underline font-semibold"
@@ -95,13 +94,13 @@ onUnmounted(() => {
           to="/about"
           class="px-4 h-full flex items-center"
         >About</NuxtLink>
-        <NuxtLink
+        <!-- <NuxtLink
           to="/posts"
           class="px-4 h-full flex items-center"
-        >Contracting Blog</NuxtLink>
+        >Contracting Blog</NuxtLink> -->
         <NuxtLink
           to="/contact-pa-contractor"
-          class="bg-primary text-inverted px-4 h-full flex items-center hover:bg-primary/90 border-l"
+          class="bg-primary text-inverted px-4 ml-4 h-full flex items-center hover:bg-primary/90 border-l"
         >
           Contact Us
         </NuxtLink>
@@ -164,11 +163,11 @@ onUnmounted(() => {
                 class="py-2"
                 @click="menuOpen = false"
               >About</NuxtLink>
-              <NuxtLink
+              <!-- <NuxtLink
                 to="/posts"
                 class="py-2"
                 @click="menuOpen = false"
-              >Contracting Blog</NuxtLink>
+              >Contracting Blog</NuxtLink> -->
               <NuxtLink
                 to="/contact-pa-contractor"
                 class="py-2"

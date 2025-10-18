@@ -38,7 +38,9 @@ function formatDate(dateStr?: string) {
       <div class="absolute inset-0 bg-black/60" />
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center px-4">
-          <h1 class="m-0 text-stone-100 max-w-3xl">{{ page?.title }}</h1>
+          <h1
+            class="hero-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-100 max-w-3xl tracking-tight"
+          >{{ page?.title }}</h1>
           <p
             v-if="page?.date"
             class="text-stone-300 mt-2 flex items-center justify-center gap-2"
@@ -56,6 +58,7 @@ function formatDate(dateStr?: string) {
     <UContainer class="pt-8 pb-16 min-h-screen max-w-3xl">
       <div class="flex flex-col gap-6">
         <ContentRenderer
+          prose
           v-if="page"
           :value="page"
           class="prose max-w-none"
