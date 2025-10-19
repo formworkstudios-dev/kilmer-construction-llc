@@ -146,10 +146,10 @@ onMounted(async () => {
                     size="20"
                   />
                   <a
-                    href="tel:+15705551234"
+                    href="tel:+15708786334"
                     class="text-primary hover:underline"
                   >
-                    (570) 555-1234
+                    (570) 878-6334
                   </a>
                 </div>
 
