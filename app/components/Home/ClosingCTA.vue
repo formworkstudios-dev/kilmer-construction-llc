@@ -22,7 +22,7 @@
                 class="w-full md:w-auto justify-center text-center"
               >Get Your Free Quote</UButton>
               <UButton
-                href="tel:+15705551234"
+                href="tel:5708786334"
                 color="primary"
                 size="lg"
                 variant="outline"

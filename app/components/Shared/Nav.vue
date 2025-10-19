@@ -68,10 +68,10 @@ onUnmounted(() => {
     <!-- Top Call Now strip -->
     <div class="bg-yellow-400 dark:bg-yellow-600 dark:text-white text-black text-sm border-b relative z-[1150]">
       <a
-        href="tel:+15705551234"
+        href="tel:5708786334"
         class="block text-center h-8 leading-8 px-4 hover:underline font-semibold"
       >
-        Call Now: (570) 555-1234
+        Call Now: (570) 878-6334
       </a>
     </div>
 
@@ -176,7 +176,7 @@ onUnmounted(() => {
             </nav>
             <div class="mt-6">
               <a
-                href="tel:+15705551234"
+                href="tel:5708786334"
                 class="block text-center bg-primary text-inverted py-3 font-medium"
               >Call Now</a>
             </div>
