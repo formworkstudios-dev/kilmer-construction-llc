@@ -172,9 +172,14 @@ onMounted(async () => {
                     class="text-primary"
                     size="20"
                   />
-                  <p class="text-muted">
+                  <a
+                    href="https://www.google.com/maps?q=841+Spruce+Street,+Olyphant,+PA+18447"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
                     841 Spruce Street, Olyphant, PA 18447
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
