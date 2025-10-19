@@ -34,13 +34,13 @@ h1:not(.hero-title) {
 /* Keep Alfa Slab One for hero or logo only */
 
 .hero-heading {
-  font-family: "Alfa Slab One", cursive !important;
+  font-family: "Alfa Slab One", sans-serif !important;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .logo {
-  font-family: "Alfa Slab One", cursive !important;
+  font-family: "Alfa Slab One", sans-serif !important;
 }
 
 /* Use a more versatile secondary display font for other headings */

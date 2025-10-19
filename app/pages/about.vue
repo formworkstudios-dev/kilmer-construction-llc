@@ -30,7 +30,7 @@
             src="/kilmer-construction.PNG"
             alt="Kilmer Construction LLC Logo"
             height="160"
-            class="mx-auto mb-4"
+            class="mx-auto mb-4 h-[160px]"
             loading="eager"
             decoding="async"
             placeholder
