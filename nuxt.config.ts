@@ -8,6 +8,8 @@ export default defineNuxtConfig({
       description:
         "Family-owned contractor in Northeastern PA specializing in renovations, additions, and new builds with expert craftsmanship and reliable service.",
       url: "https://kilmerconstruction.com",
+      image: "https://kilmerconstruction.com/kilmer-construction.PNG",
+      telephone: "+1-570-878-6334",
       address: {
         streetAddress: "841 Spruce Street",
         addressLocality: "Olyphant",

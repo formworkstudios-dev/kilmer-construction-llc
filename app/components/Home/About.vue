@@ -26,6 +26,11 @@
               exceptional results that exceed expectations. Contact us today to learn how we can help bring your vision
               to life.</p>
 
+            <p class="text-muted mb-4"><strong>Phone:</strong> <a
+                href="tel:5708786334"
+                class="text-primary hover:underline"
+              >(570) 878-6334</a></p>
+
             <UButton
               color="primary"
               variant="solid"

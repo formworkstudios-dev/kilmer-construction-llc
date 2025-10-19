@@ -90,9 +90,9 @@ function onError(e: FormErrorEvent) {
               size="18"
             />
             <a
-              href="tel:5035551234"
+              href="tel:5708786334"
               class="text-primary font-medium hover:underline"
-            >(503) 555-1234</a>
+            >(570) 878-6334</a>
           </span>
           <span class="inline-block">
             <UIcon
