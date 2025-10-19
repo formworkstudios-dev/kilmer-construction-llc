@@ -3,16 +3,16 @@ import { defineLocalBusiness } from "nuxt-schema-org/schema";
 export default defineNuxtConfig({
   schemaOrg: {
     identity: defineLocalBusiness({
-      "@type": "Contractor",
+      "@type": "HomeAndConstructionBusiness",
       name: "Kilmer Construction LLC",
       description:
         "Family-owned contractor in Northeastern PA specializing in renovations, additions, and new builds with expert craftsmanship and reliable service.",
       url: "https://kilmerconstruction.com",
       address: {
-        streetAddress: "132 Cherry St.",
-        addressLocality: "Archbald",
+        streetAddress: "841 Spruce Street",
+        addressLocality: "Olyphant",
         addressRegion: "PA",
-        postalCode: "18403",
+        postalCode: "18447",
         addressCountry: "US",
       },
     }),

@@ -13,7 +13,7 @@ export default defineAppConfig({
     },
     button: {
       slots: {
-        base: "rounded-none font-medium inline-flex items-center cursor-pointer disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors",
+        base: "rounded-none !py-[10px] font-medium inline-flex items-center cursor-pointer disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors",
       },
     },
     input: {

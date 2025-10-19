@@ -100,7 +100,7 @@ onUnmounted(() => {
         >Contracting Blog</NuxtLink> -->
         <NuxtLink
           to="/contact-pa-contractor"
-          class="bg-primary text-inverted px-4 ml-3 h-full flex items-center hover:bg-primary/90 border-l"
+          class="bg-primary text-inverted px-4 font-bold ml-3 h-full flex items-center hover:bg-primary/90 border-l"
         >
           Contact Us
         </NuxtLink>

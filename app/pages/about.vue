@@ -30,12 +30,12 @@
             src="/kilmer-construction.PNG"
             alt="Kilmer Construction LLC Logo"
             height="160"
-            class="mx-auto mb-4 h-[160px]"
+            class="mx-auto mb-4 !h-[160px]"
             loading="eager"
             decoding="async"
             placeholder
           />
-          <p class="mt-4 text-xl">
+          <p class="mt-4 !text-xl">
             <span class="font-bold">Kilmer Construction LLC</span> is a second-generation, family-owned contracting
             company
             based in Northeastern Pennsylvania.
@@ -43,11 +43,11 @@
               class="font-bold">quality craftsmanship</span> and
             reliable service.
           </p>
-          <p class="mt-4 text-xl">
+          <p class="mt-4 !text-xl">
             We handle renovations, additions, kitchens, bathrooms, exterior improvements, and light commercial work with
             <span class="font-bold">clear communication and dependable timelines</span>.
           </p>
-          <p class="mt-4 text-xl">
+          <p class="mt-4 !text-xl">
             Proudly serving Archbald, Scranton, Carbondale, Dunmore, Clarks Summit, and surrounding NEPA
             communities.
           </p>
