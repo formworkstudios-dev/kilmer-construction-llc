@@ -50,33 +50,18 @@ const galleryImages = [
     alt: 'Siding job in NEPA'
   },
   {
-    id: 10,
-    src: '/deck-construction-pa.webp',
-    alt: 'Deck construction project'
-  },
-  {
-    id: 11,
-    src: '/deck-construction-pa.webp',
-    alt: 'Custom deck construction'
-  },
-  {
-    id: 12,
-    src: '/deck-construction-pa.webp',
-    alt: 'Outdoor deck installation'
-  },
-  {
     id: 13,
     src: '/deck-construction-near-me-pa.webp',
     alt: 'Professional deck construction'
   },
   {
     id: 14,
-    src: '/outdoor-deck-construction-nepa.webp',
+    src: '/deck-construction-nepa.webp',
     alt: 'Quality deck building services'
   },
   {
     id: 15,
-    src: '/deck-construction-pa.webp',
+    src: '/new-deck-construction.webp',
     alt: 'Deck construction in Pennsylvania'
   },
 
