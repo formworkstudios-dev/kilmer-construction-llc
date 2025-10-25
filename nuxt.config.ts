@@ -1,6 +1,12 @@
 import { defineLocalBusiness } from "nuxt-schema-org/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  makesOffer: [
+    { "@type": "Service", name: "Home Renovation" },
+    { "@type": "Service", name: "Deck Construction" },
+    { "@type": "Service", name: "Kitchen Remodeling" },
+    { "@type": "Service", name: "General Contracting" },
+  ],
   schemaOrg: {
     identity: defineLocalBusiness({
       "@type": "HomeAndConstructionBusiness",
@@ -11,6 +17,12 @@ export default defineNuxtConfig({
       image: "https://kilmerconstruction.com/kilmer-construction.PNG",
       telephone: "+1-570-878-6334",
       address: {
+        offers: [
+          { "@type": "Service", name: "Home Renovation" },
+          { "@type": "Service", name: "Deck Construction" },
+          { "@type": "Service", name: "Kitchen Remodeling" },
+          { "@type": "Service", name: "General Contracting" },
+        ],
         streetAddress: "841 Spruce Street",
         addressLocality: "Olyphant",
         addressRegion: "PA",
