@@ -61,7 +61,7 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen flex items-stretch border-b">
-    <div class="w-full h-[100dvh] md:h-auto">
+    <div class="w-full min-h-screen h-auto">
       <div
         class="flex flex-col md:grid md:grid-cols-2 w-full h-full md:h-screen justify-between md:justify-between box-border min-h-0"
       >
@@ -91,9 +91,9 @@ onUnmounted(() => {
                 variant="solid"
                 size="xl"
                 to="/contact-pa-contractor"
-                class="w-full md:w-auto"
+                class="w-full md:w-auto text-center"
               >
-                Get a Free Quote
+                <span class="text-center w-full"> Get a Free Quote</span>
               </UButton>
               <UButton
                 color="primary"
@@ -102,7 +102,7 @@ onUnmounted(() => {
                 href="tel:+15705551234"
                 class="w-full md:w-auto"
               >
-                Call Now
+                <span class="text-center w-full"> Call Now</span>
               </UButton>
             </div>
           </div>

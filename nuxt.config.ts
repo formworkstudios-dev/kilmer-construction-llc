@@ -17,6 +17,39 @@ export default defineNuxtConfig({
         postalCode: "18447",
         addressCountry: "US",
       },
+      areaServed: [
+        { "@type": "City", name: "Olyphant" },
+        { "@type": "City", name: "Scranton" },
+        { "@type": "City", name: "Dickson City" },
+        { "@type": "City", name: "Throop" },
+        { "@type": "City", name: "Pittston" },
+        { "@type": "City", name: "Carbondale" },
+        { "@type": "City", name: "Mt Pocono" },
+      ],
+      hasMap:
+        "https://www.google.com/maps?q=841+Spruce+Street,+Olyphant,+PA+18447",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 41.4682,
+        longitude: -75.6013,
+      },
+      sameAs: ["https://www.facebook.com/kilmerconstruction/"],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "08:00",
+          closes: "20:00",
+        },
+      ],
     }),
   },
   fonts: {
