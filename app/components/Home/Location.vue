@@ -8,56 +8,6 @@ import type { Map } from 'leaflet'
 const mapContainer = ref<HTMLElement>()
 let map: Map | null = null
 
-// Structured Data for SEO
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Kilmer Construction LLC",
-        "description": "Professional construction services in Pennsylvania",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "132 Cherry St.",
-          "addressLocality": "Archbald",
-          "addressRegion": "PA",
-          "postalCode": "18403",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 41.5051,
-          "longitude": -75.5398
-        },
-        "telephone": "+15705551234",
-        "email": "info@kilmerconstruction.com",
-        "url": "https://kilmerconstruction.com",
-        "openingHours": [
-          "Mo-Fr 08:00-17:00",
-          "Sa 09:00-15:00"
-        ],
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 41.5051,
-            "longitude": -75.5398
-          },
-          "geoRadius": "50000"
-        },
-        "priceRange": "$$",
-        "areaServed": [
-          "Archbald, PA",
-          "Scranton, PA",
-          "Carbondale, PA",
-          "Lackawanna County, PA"
-        ]
-      })
-    }
-  ]
-})
 
 onMounted(async () => {
   // Dynamically import Leaflet to avoid SSR issues
@@ -71,25 +21,19 @@ onMounted(async () => {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map)
 
-  // Service area polygon covering Lackawanna County and surrounding areas
-  const serviceAreaCoords: [number, number][] = [
-    // Approximate boundary of service area covering:
-    // Archbald, Scranton, Carbondale, Dunmore, Clarks Summit, etc.
-    [41.65, -75.85], // Northwest
-    [41.65, -75.35], // Northeast  
-    [41.25, -75.25], // Southeast
-    [41.15, -75.75], // Southwest
-    [41.35, -75.95], // West
-    [41.65, -75.85]  // Back to start
-  ]
+  // Load counties.geojson for service area
+  const response = await fetch('/counties.geojson')
+  const countiesGeoJson = await response.json()
 
-  // Add service area polygon
-  const serviceArea = L.polygon(serviceAreaCoords, {
-    color: '#3b82f6',      // Blue border
-    fillColor: '#3b82f6',  // Blue fill
-    fillOpacity: 0.2,      // Semi-transparent
-    weight: 2,             // Border thickness
-    opacity: 0.8           // Border opacity
+  // Add GeoJSON layer for counties
+  const countiesLayer = L.geoJSON(countiesGeoJson, {
+    style: {
+      color: '#3b82f6',      // Blue border
+      fillColor: '#3b82f6',  // Blue fill
+      fillOpacity: 0.2,      // Semi-transparent
+      weight: 2,             // Border thickness
+      opacity: 0.8           // Border opacity
+    }
   }).addTo(map)
 
   // Add business location marker
@@ -111,18 +55,8 @@ onMounted(async () => {
     </div>
   `)
 
-  // Add service area popup
-  serviceArea.bindPopup(`
-    <div class="text-center">
-      <strong>🏗️ Service Area</strong><br>
-      <small>Lackawanna County & Surrounding Areas</small><br>
-      <em>Archbald • Scranton • Carbondale<br>
-      Dunmore • Clarks Summit & More</em>
-    </div>
-  `)
-
-  // Fit map to show the entire service area
-  map.fitBounds(serviceArea.getBounds(), { padding: [20, 20] })
+  // Fit map to show the entire counties layer
+  map.fitBounds(countiesLayer.getBounds(), { padding: [20, 20] })
 })
 </script>
 
@@ -203,7 +137,10 @@ onMounted(async () => {
               style="min-height: 320px;"
             />
             <p class="!text-sm text-muted mt-2 text-center">
-              Blue area shows our service coverage • Red dot is our office location
+              Don't see your service area? <NuxtLink
+                to="/contact-pa-contractor"
+                class="text-primary hover:underline"
+              >Contact us</NuxtLink>.
             </p>
           </div>
         </div>
@@ -215,4 +152,10 @@ onMounted(async () => {
 <style>
 /* Import Leaflet CSS */
 @import 'leaflet/dist/leaflet.css';
+
+/* Hide Leaflet attribution and logo (including Ukrainian flag) */
+.leaflet-control-attribution,
+.leaflet-control-logo {
+  display: none !important;
+}
 </style>
